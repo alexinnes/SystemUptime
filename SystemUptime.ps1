@@ -28,12 +28,12 @@
     )
 
     Begin {
-        $LastReboot = Get-CimInstance -ComputerName $ComputerName -ClassName win32_operatingsystem | Select-Object csname, lastbootuptime
+        $LastReboot = Get-CimInstance -ComputerName $ComputerName -ClassName win32_operatingsystem
 
     }
 
     Process {
-        $TimeSpan = New-TimeSpan $LastReboot.lastbootuptime (get-date)
+        $TimeSpan = New-TimeSpan -start $LastReboot.lastbootuptime -end (get-date)
         $output = [ordered]@{
             Days = $timeSpan.Days
             Hours = $timeSpan.Hours
