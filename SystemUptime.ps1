@@ -5,7 +5,7 @@
     .DESCRIPTION
        gets the computers uptime in Days, Hours and Minutes
     .EXAMPLE
-       Get-Updtime -Computername <ComputerName>
+       Get-Uptime -Computername <ComputerName>
     .EXAMPLE
        Get-Uptime #Gets the uptime of the local computer.
     .INPUTS
